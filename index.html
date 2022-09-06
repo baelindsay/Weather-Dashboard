@@ -2,38 +2,143 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather Dashboard</title>
-<link rel="stylesheet" href="style.css"></link>
-<script src=""></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src=""></script>
+
+    <link rel="stylesheet" href="style.css"></link>
+    <title>Weather Dashboard</title>
 </head>
 
+
 <body>
+
     <section class="top-banner">
         <div class="container">
             <h1 class="heading"> Weather Dashboard</h1> 
         </div>
     </section>
   
-                
-    <aside class="container">
-        <h2>Search for a City;</h2>
-        <form>
-            <div class="form-group">
-                <input type="text" placeholder="Seach for a city">
+    <!--Main Container--> 
+    <aside class=" main-container container-fluid">
+        <div class="row">
+        
+         <!--Search for a city-->   
+        <div id="search-part" class="col-md-4">
+            <div class="card-body">
+                <h3>Search for a City;</h3>
+                     <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Seach for a city">
+                         </div>
+                        <div class="form-group">
+                            <button class="btn scavenge" type="submit">submit</button>
+                        </div>
+                            <!-- <span class="msg"></span> -->
+                     </form>
             </div>
-            <div class="form-group">
-                <button type="submit">submit</button>
-            </div>
-            <span class="msg"></span>
-        </form>
-    </aside>
-    <section class="ajax-section">
-        <div class="container">
-            <ul class="cities"></ul>
         </div>
-    </section>
+
+        <!--Weather Column Parts-->
+            <div class="col-md-8 container-left-columns">
+                <!--Current City-->
+                <div class="row">
+                    <div class="card city-card">
+                        <div class="card-body">
+                            <p class="current_date"></p>
+                            <p class="city"></p>
+                            <p class="weather-icon"></p>
+                            <p class="temperature"></p>
+                            <p class="humidity"></p>
+                            <p class="wind"></p>
+                            <p class="uv"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!--5-day Forecast Title-->
+        <div class="row-blue">
+            <div class="row">
+                <div class="forecast_title">
+                    <div class="forecast">
+                        <h3>5-Day Forecast:</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--5 Day Forecast Days-->
+        <div class="row gutters">
+            <!-- Day 1 -->
+            <div class="col">
+                <div class="card forecastDay">
+                    <div class="card-body bg-primary">
+                        <p class="day-1-date"></p>
+                        <p class="day-1-icon"></p>
+                        <p class="day-1-temp"></p>
+                        <p class="day-1-humid"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Day 2 -->
+            <div class="col">
+                <div class="card forecastDay">
+                    <div class="card-body bg-primary">
+                        <p class="day-2-date"></p>
+                        <p class="day-2-icon"></p>
+                        <p class="day-2-temp"></p>
+                        <p class="day-2-humid"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Day 3 -->
+            <div class="col">
+                <div class="card forecastDay">
+                    <div class="card-body bg-primary">
+                        <p class="day-3-date"></p>
+                        <p class="day-3-icon"></p>
+                        <p class="day-3-temp"></p>
+                        <p class="day-3-humid"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Day 4 -->
+            <div class="col">
+                <div class="card forecastDay">
+                    <div class="card-body bg-primary">
+                        <p class="day-4-date"></p>
+                        <p class="day-4-icon"></p>
+                        <p class="day-4-temp"></p>
+                        <p class="day-4-humid"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Day 5 -->
+            <div class="col">
+                <div class="card forecastDay">
+                    <div class="card-body bg-primary">
+                        <p class="day-5-date"></p>
+                        <p class="day-5-icon"></p>
+                        <p class="day-5-temp"></p>
+                        <p class="day-5-humid"></p>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+    
 
 </body>
+
 </html>

@@ -34,7 +34,7 @@ aside {
     display: flex;
     flex-direction: column;
     column-gap: 10px 20px;
-    margin-left: 2px; /* Same width as the sidebar + left position in px */
+    margin-left: 1px; /* Same width as the sidebar + left position in px */
     font-size: 20px; /* Increased text to enable scrolling */
     
     
@@ -80,8 +80,37 @@ input[type=text] {
     border: 3px solid #555;
   }
 
+  .ajax-section {
+    margin: 50px 0 20px;
+  }
+
+  .ajax-section .cities {
+    display: grid;
+    grid-gap: 32x 20px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   img {
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+
+  @media screen and (max-width: 1000px) { 
+    .ajax-section .cities {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+   
+  @media screen and (max-width: 700px) {
+    .ajax-section .cities {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+   
+  @media screen and (max-width: 500px) {  
+    .ajax-section .cities {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
