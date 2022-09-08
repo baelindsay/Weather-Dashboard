@@ -1,93 +1,7 @@
-
-const app = {
-    init: () => {
-        document
-          .getElementById('btnGet')
-            //fetch weather
-          .addEventListener('click', app.fetchWeather);
-        document
-          .getElementById('btnCurrent')
-            //click and get location
-          .addEventListener('click', app.getLocation);
-    },
-    fetchWeather: (ev) => {
-        //uses the values from lat and long to fetch the weather
-        // let lat = document.getElementById('latitude').value;
-        // let lon = document.getElementById('longitude').value;
-        let lat = 39.31;
-        let lon = -74.5;
-        let key = '889987390ee7b84d41d0f4c35bf8c2ea';
-        let lang = 'en';
-        let units = 'imperial';
-        let url = 'http://api.openweathermap.org/data/2.5/onecall?lat${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}'
-          //fetch the weather - (fetch is promise based)
-        fetch(url)
-          .then(resp=>{
-            if(!resp.ok) throw new Error(resp.statusText);
-            return resp.json();
-          })
-          .then(data=>{
-            app.showWeather(data);
-          })
-          .catch(console.err);
-    },
-    getLocation: (ev) => {
-        let opts = {
-            enableHighAccuracy: true,
-            timeout: 1000 * 10, //10 seconds
-            maximumAge: 1000 * 60 * 5, //5 minutes
-        };  
-        navigator.geolocation.getCurrentPosition(app.ftw, app.wtf, opts);
-    }, 
-    ftw: (position) => {
-        // position succuess function 
-        document.getElementById('latitude').value =
-          position.coords.latitude.toFixed(2);
-        document.getElementById('longitude').value =
-          position.coords.longitude.toFixed(2);
-          //set in 2 decimal places
-    },
-    wtf: (err) => {
-        // geolocation failure function
-        console.error(err);
-    },
-    showWeather: (resp) => {
-        console.log(resp);
-        let row = document.querySelector('.weather.row');
-        //clear our the old weather and add the new weather
-        // row.innerHTML = '';
-        row.innterHTML = resp.daily
-            .map((day,idx) => {
-                if(idx < 5){
-                    return '<p>Day</p>';
-                }
-             })
-            .join(' ');
-
-    //  let html = '<div class="col">
-    //     <div class="card" style="width: 30vw">
-    //         <h5 class="card-title p-2">Date</h5> 
-    //         <img
-    //           src="http://openweathermap.org/img/wn/10d@4x.png"
-    //           class="card-img-top"
-    //           alt="Weather description"
-    //         />
-    //         <div class="card-body">
-    //             <h3 class="card-title">Weather Label</h3>
-    //             <p class="card-text">High Temp Low Temp</p>
-    //             <p class="card-text">Humidity</p>
-    //             <p class="card-text">UV Index</p>
-    //             <p class="card-text">Wind Speed</p>
-    //         </div>
-    //     </div>
-    // </div>'
-    },
-};
-//gets called right away
-app.init();
-
 // API Key //
-// var apiKey = "a1592b841ec303cddcf1f50344cedc17";
+var apiKey = '&appid=889987390ee7b84d41d0f4c35bf8c2ea';
+
+
 // Display the current and future weather to the user after attaining city form from the input text box //
 // function displayWeather(event) {
 //     event.preventDefault();
@@ -108,29 +22,33 @@ app.init();
 
 // }
     
+
 // List of DOM Element
-// var searchBtn = $('.scavenge');
-// var cityList = $('.city-list');
-// var inputEl = $('.input');
-// var seachCity = 
+var searchBtnEl = document.querySelector('.search-button');
+var cityListEl = document.querySelector('.city-list');
+var inputEl = document.querySelector('.input');
+
 
 // Presentation of Date //
-// var presentDay = moment().format("dddd, MMMM Do");
+var presentDay = moment().format("dddd, MMMM Do");
 
-// function dayFunction() {
-//     $('.present_date').text(presentDay);
-// };
-// dayFunction();
+function dayFunction() {
+    $('.present_date').text(presentDay);
+};
+dayFunction();
 
 // URL for present day (city name + weather) //
-// var URL_Weather = "https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}"
+var URL_Weather = "https://api.openweathermap.org/data/2.5/weather?q=" + city_name + '&units=imperial' + apiKey;
+
 
 // // URL for 5-days forcast (city name + weather) //
-// var URL_Forecast = "https://api.openweathermap.org/data/2.5/onecall?" + city_name + '&units=imperial' + apiKey
+// var URL_Forecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + city_name + '&units=imperial' + apiKey;
 
+// // On Click Event Listener for Search Button //
+searchBtnEl.addEventListener('click', RECORDCityData);
 
 // // Stations cityName in localStorage //
-// var city_name = localStorage.getItem('store_cityName');
+var city_name = localStorage.getItem('store_city_name');
 
 // // Positions the input value in localStorage //
 // function trackCityData() {
@@ -138,12 +56,13 @@ app.init();
 // }
 
 // Append the search input from localStorage to the list of cities//
-// for(var i = 0; i < localStorage.length; i++) {
-//     $('.city-list').append('<p>' + localStorage.getItem(localStorage, apiKey(i)) + '</p>');
-// }
+for (var i = 0; i < localStorage.length; i++) {
+    $(".city-list").append("<p>" + localStorage.getItem(localStorage.key(i)) + "</p>");
+}
 
+// Presen Day Weather Function
 // $.ajax ({
-//     url: URL_Weather,
+    // url: URL_Weather,
 //     method: "GET"
 // })
 //     .then(function(response) {
@@ -202,6 +121,4 @@ app.init();
 //         $('.day-1-humid').text('Humidity: ' + response.list[0].main.humid + '%');
 //     });
 
-// // On Click Event Listener for Search Button //
-// searchBtn.addEventListener('click', trackCityData);
 

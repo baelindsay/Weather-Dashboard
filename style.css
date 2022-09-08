@@ -54,7 +54,7 @@ button {
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    width: 30%;
+    width: 100%;
     transition-duration: 0.4s;
 }
 

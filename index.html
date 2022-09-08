@@ -14,39 +14,46 @@
 </head>
 
 <body>
-    <div> 
-         <header class="container">
-            <h1 class="heading"> Weather Dashboard</h1> 
+    <!--navigation/top banner-->
+    <nav> 
+         <header class='top-banner'>
+            <h1 class='heading'> Weather Dashboard</h1> 
          </header>
-    </div>
+    </nav>
+
     <!--Main Container--> 
-    <div class="main-container container-fluid">
-        <div class="row">
+    <div class='main-container container-fluid'>
+        <div class='row'>
         
          <!--Search for a city-->   
-        <div id="search-sector" class="col-md-4">
-            <div class="card-body">
-                <h3>Search for a City;</h3>
-                     <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Seach for a city">
-                         </div>
-                        <div class="form-group">
-                            <button class="btn scavenge" type="submit">submit</button>
-                        </div>
-                            <!-- <span class="msg"></span> -->
+        <div id='search-sector' class='col-md-4'>
+            <div class='card-body'>
+                <h3>Search for a City:</h3>
+                     <form class="form-inline">
+                        <input 
+                            type="text" 
+                            name="searchBar"
+                            id="searchBar"
+                            placeholder="Enter City Name" 
+                            class="form-control mr-sm-2 input"
+                        />                            
+                        <button 
+                            class="btn btn-primary my-2 my-sm-0 search search-button" 
+                            type="submit">
+                                submit
+                        </button>
                      </form>
+                     
+                <div class="city-list"></div>
             </div>
         </div>
-    </div>
 
-        <!--Weather Column Parts-->
-        <header class = cities></header>
-            <div class="col-md-8 container-left-columns">
+          <!--Weather Columns Container-->
+            <div class='col-md-8 container-left-columns'>
                 <!--Current City-->
-                <div class="row">
-                    <div class="card city-card">
-                        <div class="card-body">
+                <div class='row'>
+                    <div class='card city-card'>
+                        <div class='card-body'>
                             <p class="present_date"></p>
                             <p class="city"></p>
                             <p class="weather_icon"></p>
@@ -57,18 +64,30 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-        <!--5-day Forecast Title-->
-        <div class="row_blue">
-            <div class="row">
-                <div class="forecast_title">
-                    <div class="forecast">
-                        <h3>5-Day Forecast:</h3>
+                <!--5-day Forecast Title-->
+                <div class="row_blue">
+                <div class="row">
+                    <div class="forecast_title">
+                        <div class="forecast">
+                            <h3>5-Day Forecast:</h3>
+                        </div>
                     </div>
                 </div>
+                
+
+
+
+
+
             </div>
-        </div>
+
+
+
+   
+
+        
+
+        
 
         <!-- 5 Day Forecast Days
         <div class="row gutters">
