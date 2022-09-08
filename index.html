@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--links-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://kit.fontawesome.com/4d70f3ad75.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src=""></script>
-
-    <link rel="stylesheet" href="style.css"></link>
+   <!--css-->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Weather Dashboard</title>
 </head>
 
-
 <body>
-
-    <section class="top-banner">
-        <div class="container">
+    <div> 
+         <header class="container">
             <h1 class="heading"> Weather Dashboard</h1> 
-        </div>
-    </section>
-  
+         </header>
+    </div>
     <!--Main Container--> 
-    <aside class=" main-container container-fluid">
+    <div class="main-container container-fluid">
         <div class="row">
         
          <!--Search for a city-->   
-        <div id="search-part" class="col-md-4">
+        <div id="search-sector" class="col-md-4">
             <div class="card-body">
                 <h3>Search for a City;</h3>
                      <form>
@@ -41,14 +38,16 @@
                      </form>
             </div>
         </div>
+    </div>
 
         <!--Weather Column Parts-->
+        <header class = cities></header>
             <div class="col-md-8 container-left-columns">
                 <!--Current City-->
                 <div class="row">
                     <div class="card city-card">
                         <div class="card-body">
-                            <p class="current_date"></p>
+                            <p class="present_date"></p>
                             <p class="city"></p>
                             <p class="weather_icon"></p>
                             <p class="temperature"></p>
@@ -61,7 +60,7 @@
             </div>
 
         <!--5-day Forecast Title-->
-        <div class="row-blue">
+        <div class="row_blue">
             <div class="row">
                 <div class="forecast_title">
                     <div class="forecast">
@@ -71,10 +70,10 @@
             </div>
         </div>
 
-        <!--5 Day Forecast Days-->
+        <!-- 5 Day Forecast Days
         <div class="row gutters">
-            <!-- Day 1 -->
-            <div class="col">
+            < Day 1 -->
+            <!-- <div class="col">
                 <div class="card forecastDay">
                     <div class="card-body bg-primary">
                         <p class="day-1-date"></p>
@@ -83,9 +82,9 @@
                         <p class="day-1-humid"></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Day 2 -->
-            <div class="col">
+            <!-- <div class="col">
                 <div class="card forecastDay">
                     <div class="card-body bg-primary">
                         <p class="day-2-date"></p>
@@ -94,9 +93,9 @@
                         <p class="day-2-humid"></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Day 3 -->
-            <div class="col">
+            <!-- <div class="col">
                 <div class="card forecastDay">
                     <div class="card-body bg-primary">
                         <p class="day-3-date"></p>
@@ -105,9 +104,9 @@
                         <p class="day-3-humid"></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Day 4 -->
-            <div class="col">
+            <!-- <div class="col">
                 <div class="card forecastDay">
                     <div class="card-body bg-primary">
                         <p class="day-4-date"></p>
@@ -116,9 +115,9 @@
                         <p class="day-4-humid"></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Day 5 -->
-            <div class="col">
+            <!-- <div class="col">
                 <div class="card forecastDay">
                     <div class="card-body bg-primary">
                         <p class="day-5-date"></p>
@@ -127,11 +126,11 @@
                         <p class="day-5-humid"></p>
                     </div>
                 </div>
-            </div>
+            </div> 
 
 
 
-        </div>
+        </div> -->
 
 
 
@@ -140,5 +139,5 @@
     
 
 </body>
-<script src="script.js"></script>
+<script type="text/javascript" src="javascript.js"></script>
 </html>
