@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!--links-->
+    <!--links-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://kit.fontawesome.com/4d70f3ad75.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <!--css-->
+    <!--css-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Weather Dashboard</title>
 </head>
@@ -16,41 +16,44 @@
 <body>
     <!--navigation/top banner-->
     <nav> 
-         <header class='top-banner'>
+        <header class='top-banner'>
             <h1 class='heading'> Weather Dashboard</h1> 
-         </header>
+        </header>
     </nav>
 
     <!--Main Container--> 
-    <div class='main-container container-fluid'>
+    <div class="main-container container-fluid">
         <div class='row'>
         
-         <!--Search for a city--> 
-        <div id='search-sector' class='col-md-4'>
+        <!--Search for a city --> 
+        <div id='search-city' class='col-md-4'>
             <div class='card-body'>
                 <h3>Search for a City:</h3>
-                     <form class="form-inline">
+                <!--Text box for collecting the search city name-->
+                    <form class="form-inline">
                         <input 
                             type="text" 
-                            name="searchBar"
-                            id="search-sector"
-                            placeholder="Enter City Name" 
                             class="form-control mr-sm-2 input"
+                            id="search-city"
+                            aria-label="City Search" 
+                            aria-describedby="search-button"
+                            placeholder="Enter City Name" 
+                            
                         />                            
                         <button 
                             class="btn btn-primary my-2 my-sm-0 search search-button" 
                             type="submit">
-                                submit
+                                Submit
                         </button>
-                     </form>
+                    </form>
                 <!--section for search city history-->
                 <div class="city-list"></div>
-                 <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
-                 <ul class="list-group">
+                    <button class=" btn btn-primary" type="button" id="clear-history">Clear history</button>
+                    <ul class="list-group">
             </div>
         </div>
 
-          <!--Weather Columns Container-->
+            <!--Weather Columns Container-->
             <div class='col-md-8 container-left-columns'>
                 <!--Current City-->
                 <div class='row'>
@@ -68,13 +71,13 @@
                 </div>
                 <!--5-day Forecast Title-->
                 <div class="row_blue">
-                <div class="row">
-                    <div class="forecast_title">
-                        <div class="forecast">
-                            <h3>5-Day Forecast:</h3>
+                    <div class="row">
+                        <div class="forecast_title">
+                            <div class="forecast">
+                                <h3>5-Day Forecast:</h3>
+                            </div>
                         </div>
                     </div>
-                </div>
                 
 
 
@@ -82,76 +85,6 @@
 
 
             </div>
-
-
-
-   
-
-        
-
-        
-
-        <!-- 5 Day Forecast Days
-        <div class="row gutters">
-            < Day 1 -->
-            <!-- <div class="col">
-                <div class="card forecastDay">
-                    <div class="card-body bg-primary">
-                        <p class="day-1-date"></p>
-                        <p class="day-1-icon"></p>
-                        <p class="day-1-temp"></p>
-                        <p class="day-1-humid"></p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Day 2 -->
-            <!-- <div class="col">
-                <div class="card forecastDay">
-                    <div class="card-body bg-primary">
-                        <p class="day-2-date"></p>
-                        <p class="day-2-icon"></p>
-                        <p class="day-2-temp"></p>
-                        <p class="day-2-humid"></p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Day 3 -->
-            <!-- <div class="col">
-                <div class="card forecastDay">
-                    <div class="card-body bg-primary">
-                        <p class="day-3-date"></p>
-                        <p class="day-3-icon"></p>
-                        <p class="day-3-temp"></p>
-                        <p class="day-3-humid"></p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Day 4 -->
-            <!-- <div class="col">
-                <div class="card forecastDay">
-                    <div class="card-body bg-primary">
-                        <p class="day-4-date"></p>
-                        <p class="day-4-icon"></p>
-                        <p class="day-4-temp"></p>
-                        <p class="day-4-humid"></p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Day 5 -->
-            <!-- <div class="col">
-                <div class="card forecastDay">
-                    <div class="card-body bg-primary">
-                        <p class="day-5-date"></p>
-                        <p class="day-5-icon"></p>
-                        <p class="day-5-temp"></p>
-                        <p class="day-5-humid"></p>
-                    </div>
-                </div>
-            </div> 
-
-
-
-        </div> -->
 
 
 
